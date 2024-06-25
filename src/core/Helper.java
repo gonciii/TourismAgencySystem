@@ -2,24 +2,77 @@ package core;
 
 import javax.swing.*;
 import java.awt.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+import java.util.Date;
+
 
 public class Helper {
-
-    // tema
     public static void setTheme() {
-        // LayoutName !
-        for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
-            if ("Nimbus".equals(info.getName())) {
-                try {
-                    UIManager.setLookAndFeel(info.getClassName());
-                } catch (Exception e) {
-                    System.out.println(e.getMessage());
-                }
-                break;
-            }
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
+    public static void showMsg(String str) {
+
+        optionPaneTR();
+        String msg;
+        String title;
+
+        switch (str) {
+            case "fill" -> {
+                msg = "Lütfen tüm alanları doldurunuz!";
+                title = "Hata";
+            }
+            case "done" -> {
+                msg = "İşlem başarılı!";
+                title = "Sonuç";
+            }
+            case "notFound" -> {
+                msg = "Kayıt bulunamadı!";
+                title = "Bulunamadı";
+            }
+            case "error" -> {
+                msg = "Hatalı İşlem Yaptınız!";
+                title = "Hata";
+            }
+            default -> {
+                msg = str;
+                title = "Bilgilendirme";
+            }
+        }
+        JOptionPane.showMessageDialog(null, msg, title, JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    public static boolean confirm(String str) {
+        String msg;
+
+        if (str.equals("sure")) {
+            msg = "Silmek İstediğinize Emin misiniz?";
+        } else {
+            msg = str;
+        }
+
+        return JOptionPane.showConfirmDialog(null, msg, "Uyarı", JOptionPane.YES_NO_OPTION) == 0;
+    }
+
+    public static boolean isFieldEmpty(JTextField fld) {
+        return fld.getText().trim().isEmpty();
+    }
+
+    public static boolean isFieldListEmpty(JTextField[] fieldList) {
+        for (JTextField field : fieldList) {
+            if (isFieldEmpty(field)) {
+                return true;
+            }
+        }
+        return false;
+    }
 
     public static int getLocationPoint(String type, Dimension size) {
         return switch (type) {
@@ -29,80 +82,29 @@ public class Helper {
         };
     }
 
-    // oto pop up -> dil değişimi
-    public static void optionPane() {
-        UIManager.put("OptionPane.okButtonText","Okey");
-        UIManager.put("OptionPane.yesButtonText","Yes");
-        UIManager.put("OptionPane.noButtonText","No");
+    public static void optionPaneTR() {
+        UIManager.put("OptionPane.okButtonText", "Tamam");
+        UIManager.put("OptionPane.yesButtonText", "Evet");
+        UIManager.put("OptionPane.noButtonText", "Hayır");
+        UIManager.put("OptionPane.cancelButtonText", "İptal");
     }
 
+    public static double CalculatePrice(double seasonFactor, double pensionFactor, int days, int adultcount, int childcount, double adultPrice, double childPrice) {
+        return (((adultcount * adultPrice) + (childcount * childPrice)) * seasonFactor * pensionFactor * days);
+    }
 
-    // TODO : mesaj gösterme !
-    public static void showMsg(String str) {
-        optionPane();
-
-        String msg;
-        String title;
-
-        switch (str) {
-            case "fill" -> {
-                msg = "Please fill in all fields ! ";
-                title = "Error!";
-            }
-
-            case "done" -> {
-                msg = "Transaction Successful !";
-                title = "Success";
-            }
-            case "notFound" -> {
-                msg = "No records found !";
-                title = "error !";
-            }
-
-            case "error" -> {
-                msg = " Sorry,an error has ocured !";
-                title = "Error ! ";
-            }
-            default -> {
-                msg = str;
-                title = "Message";
-            }
-
+    public static int calculateDays(String checkin, String checkout) {
+        SimpleDateFormat myFormat = new SimpleDateFormat("yyyy-MM-dd");
+        int days = 0;
+        try {
+            Date date1 = myFormat.parse(checkin);
+            Date date2 = myFormat.parse(checkout);
+            long difference = date2.getTime() - date1.getTime();
+            days = (int) ChronoUnit.DAYS.between(LocalDate.parse(checkin), LocalDate.parse(checkout));
+        } catch (ParseException e) {
+            e.printStackTrace();
         }
-
-        JOptionPane.showMessageDialog(null,msg,title,JOptionPane.INFORMATION_MESSAGE);
-    }
-
-    public static boolean showMassageSure(String messageType) {
-        optionPane();
-        String message;
-
-        switch (messageType) {
-            case "sure":
-                message = "Are You Sure You Want To Perform This Operation?";
-                break;
-            default:
-                message = messageType;
-        }
-
-        // bilgi mesajı
-        return JOptionPane.showConfirmDialog(null, message, "Warning !!!", JOptionPane.YES_NO_OPTION) == 0;
-    }
-
-
-
-
-    public static boolean isFieldListEmpty(JTextField[] fields) {
-        for (JTextField field : fields) {
-            if (isFieldEmpty(field)) return true;
-        }
-
-        return false;
-    }
-
-    // textField içeriği boş mu değil mi ?
-    public static boolean isFieldEmpty(JTextField field) {
-        return field.getText().trim().isEmpty();
+        return days;
     }
 
 

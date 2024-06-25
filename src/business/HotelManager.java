@@ -4,7 +4,9 @@ import core.Helper;
 import dao.HotelDao;
 import entity.Hotel;
 
+import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class HotelManager {
     private final HotelDao hotelDao;
@@ -13,76 +15,74 @@ public class HotelManager {
         this.hotelDao = new HotelDao();
     }
 
+    public ArrayList<Object[]> getForTable(int size, ArrayList<Hotel> hotels) {
+        ArrayList<Object[]> hotelObjList = new ArrayList<>();
+        for (Hotel obj : hotels) {
+            Object[] rowObject = new Object[size];
+
+            int i = 0;
+            rowObject[i++] = obj.getId();
+            rowObject[i++] = obj.getName();
+            rowObject[i++] = obj.getAddress();
+            rowObject[i++] = obj.getMail();
+            rowObject[i++] = obj.getPhone();
+            rowObject[i++] = obj.getStar();
+            rowObject[i++] = obj.isCarPark();
+            rowObject[i++] = obj.isWifi();
+            rowObject[i++] = obj.isPool();
+            rowObject[i++] = obj.isFitness();
+            rowObject[i++] = obj.isConcierge();
+            rowObject[i++] = obj.isSpa();
+            rowObject[i++] = obj.isRoomService();
+
+            hotelObjList.add(rowObject);
+        }
+        return hotelObjList;
+    }
+
     public ArrayList<Hotel> findAll() {
         return this.hotelDao.findAll();
     }
 
-    public Hotel findById(int id) {
-        return this.hotelDao.findById(id);
-    }
-
-    public boolean delete (int id) {
-        if (this.findById(id) == null) {
-            Helper.showMsg(id + "ID no registered hotel found");
-            return false;
-        }
-        return this.hotelDao.delete(id);
-    }
-
-    public boolean save(Hotel hotel){
-        if(hotel.getId() != 0){
+    public boolean save(Hotel hotel) {
+        if (hotel.getId() != 0) {
             Helper.showMsg("error");
         }
         return this.hotelDao.save(hotel);
     }
-    public boolean update(Hotel hotel){
-        if(this.findById(hotel.getId()) == null){
+
+    public Hotel getById(int id) {
+        return this.hotelDao.getById(id);
+    }
+    public String getByName(int id){
+        return this.hotelDao.getByName(id);
+    }
+    public int getByHotelId(String hotelName) {
+        return this.hotelDao.getByHotelId(hotelName);
+    }
+
+    public boolean update(Hotel hotel) {
+        if (this.getById(hotel.getId()) == null) {
             Helper.showMsg("notfound");
         }
         return this.hotelDao.update(hotel);
     }
 
-
-    public ArrayList<Object[]> getForTable(int size, ArrayList<Hotel> all){
-        ArrayList<Object[]> hotelRowList = new ArrayList<>();
-        for(Hotel hotel : all){
-            Object[] rowObject = new Object[size];
-            int i =0;
-            rowObject[i++] = hotel.getId();
-            rowObject[i++] = hotel.getName();
-            rowObject[i++] = hotel.getAddress();
-            rowObject[i++] = hotel.getMail();
-            rowObject[i++] = hotel.getPhoneno();
-            rowObject[i++] = hotel.getStar();
-            rowObject[i++] = hotel.getPensiontype().getName();
-            rowObject[i++] = hotel.getRoomtype().getName();
-            rowObject[i++] = hotel.getFeatures();
-            hotelRowList.add(rowObject);
-
-
+    public boolean delete(int id) {
+        if (this.getById(id) == null) {
+            Helper.showMsg("notfound");
+            return false;
         }
-        return hotelRowList;
+        return this.hotelDao.delete(id);
     }
-
-
-    public  ArrayList<Hotel> searchForTable(int pension_id, int room_id  ){
-        String select = "SELECT * FROM public.hotel";
-        ArrayList<String> wherelist = new ArrayList<>();
-        if(pension_id != 0){
-            wherelist.add("hotel_pensiontype_id ="+pension_id);
-
-        }
-        if (room_id != 0){
-            wherelist.add("hotel_room_id ="+room_id);
-        }
-
-        String whereStr = String.join(" AND ",wherelist);
-        String query = select;
-        if(whereStr.length() > 0){
-            query += " WHERE "+whereStr;
-        }
-        return  this.hotelDao.selectByQuery(query);
+    public List<String> getTumOtelIsimleri(){
+        return this.hotelDao.getTumOtelIsimleri();
     }
-
 
 }
+
+
+
+
+
+

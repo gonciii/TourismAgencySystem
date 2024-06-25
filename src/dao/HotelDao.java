@@ -1,37 +1,25 @@
 package dao;
 
-import core.DB;
+import core.Db;
 import entity.Hotel;
-import entity.Pension;
-import entity.Room;
+import entity.Hotel;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class HotelDao {
+    private final Connection conn;
 
-    // variables
-    private final Connection con;
-    private final PensionDao pensionDao;
-    private final FeatureDao featureDao;
-    private final RoomDao roomDao;
-
-    // constructor
     public HotelDao() {
-        this.con = DB.getInstance();
-        this.pensionDao = new PensionDao();
-        this.featureDao = new FeatureDao();
-        this.roomDao = new RoomDao();
+        this.conn = Db.getInstance();
     }
 
     public ArrayList<Hotel> findAll() {
         ArrayList<Hotel> hotelList = new ArrayList<>();
-        String sql = "SELECT * FROM public.hotel";
+        String query = "SELECT * FROM public.hotel ORDER BY hotel_id ASC";
         try {
-            ResultSet rs = this.con.createStatement().executeQuery(sql);
+            ResultSet rs = this.conn.createStatement().executeQuery(query);
             while (rs.next()) {
                 hotelList.add(this.match(rs));
             }
@@ -43,141 +31,179 @@ public class HotelDao {
 
     public Hotel match(ResultSet rs) throws SQLException {
         Hotel obj = new Hotel();
-
         obj.setId(rs.getInt("hotel_id"));
         obj.setName(rs.getString("hotel_name"));
         obj.setAddress(rs.getString("hotel_address"));
         obj.setMail(rs.getString("hotel_mail"));
-        obj.setPhoneno(rs.getString("hotel_phoneno"));
-        obj.setStar(rs.getInt("hotel_star"));
+        obj.setPhone(rs.getString("hotel_phone"));
+        obj.setStar(rs.getString("hotel_star"));
+        obj.setCarPark(rs.getBoolean("hotel_carpark"));
+        obj.setWifi(rs.getBoolean("hotel_wifi"));
+        obj.setPool(rs.getBoolean("hotel_pool"));
+        obj.setFitness(rs.getBoolean("hotel_fitness"));
+        obj.setConcierge(rs.getBoolean("hotel_concierge"));
+        obj.setSpa(rs.getBoolean("hotel_spa"));
+        obj.setRoomService(rs.getBoolean("hotel_roomservice"));
 
-        int pensionId = rs.getInt("hotel_pensiontype_id");
-        Pension pension = pensionDao.findById(pensionId);
-        obj.setPensiontype(pension);
-
-        int roomId = rs.getInt("hotel_room_id");
-        Room room = roomDao.findById(roomId);
-        obj.setRoomtype(room);
-
-        obj.setFeatures(rs.getString("hotel_features_id"));
         return obj;
-    }
 
-    public Hotel findById(int id) {
-        Hotel hotel = null;  // default
-        String sql = "SELECT * FROM public.hotel WHERE hotel_id=?";
-
-        try {
-            PreparedStatement pr = this.con.prepareStatement(sql);
-            pr.setInt(1, id);
-            ResultSet rs = pr.executeQuery();
-            if (rs.next()) {
-                hotel = this.match(rs);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return hotel;
     }
 
     public boolean save(Hotel hotel) {
-        String sql = "INSERT INTO hotel (" +
+        String query = "INSERT INTO public.hotel " +
+                "(" +
                 "hotel_name," +
                 "hotel_address," +
                 "hotel_mail," +
-                "hotel_phoneno," +
+                "hotel_phone," +
                 "hotel_star," +
-                "hotel_pensiontype_id," +
-                "hotel_room_id," +
-                "hotel_features " +
-                "VALUES (?,?,?,?,?,?,?,?)";
+                "hotel_carpark," +
+                "hotel_wifi," +
+                "hotel_pool," +
+                "hotel_fitness," +
+                "hotel_concierge," +
+                "hotel_spa," +
+                "hotel_roomservice" +
+                ")" +
+                " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
 
         try {
-            PreparedStatement ps = this.con.prepareStatement(sql);
-            ps.setString(1, hotel.getName());
-            ps.setString(2, hotel.getAddress());
-            ps.setString(3, hotel.getMail());
-            ps.setString(4, hotel.getPhoneno());
-            ps.setInt(5, hotel.getStar());
-            ps.setInt(6, hotel.getPensiontype().getId()); // Pension type ID
-            ps.setInt(7, hotel.getRoomtype().getId()); // Feature IDs
-            ps.setString(8, hotel.getFeatures()); // Room type ID
-            return ps.executeUpdate() != -1;
-
-
-        } catch (SQLException exception) {
-            exception.printStackTrace();
+            PreparedStatement pr = this.conn.prepareStatement(query);
+            pr.setString(1, hotel.getName());
+            pr.setString(2, hotel.getAddress());
+            pr.setString(3, hotel.getMail());
+            pr.setString(4, hotel.getPhone());
+            pr.setString(5, hotel.getStar());
+            pr.setBoolean(6, hotel.isCarPark());
+            pr.setBoolean(7, hotel.isWifi());
+            pr.setBoolean(8, hotel.isPool());
+            pr.setBoolean(9, hotel.isFitness());
+            pr.setBoolean(10, hotel.isConcierge());
+            pr.setBoolean(11, hotel.isSpa());
+            pr.setBoolean(12, hotel.isRoomService());
+            return pr.executeUpdate() != -1;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
         }
         return true;
     }
 
     public boolean update(Hotel hotel) {
-        String sql = "UPDATE hotel " +
-                "SET hotel_name = ? " +
-                "hotel_address = ?" +
-                "hotel_mail = ?" +
-                "hotel_phoneno = ?" +
-                "hotel_star = ?" +
-                "hotel_pensiontype_id = ? " +
-                "hotel_room_id = ?" +
-                "hotel_features = ?" +
-                "WHERE hotel_id = ? ";
+        String query = "UPDATE public.hotel SET " +
+                "hotel_name = ? ," +
+                "hotel_address = ? , " +
+                "hotel_mail = ? , " +
+                "hotel_phone = ? , " +
+                "hotel_star= ? , " +
+                "hotel_carpark = ? , " +
+                "hotel_wifi = ? , " +
+                "hotel_pool = ? , " +
+                "hotel_fitness = ? , " +
+                "hotel_concierge = ? , " +
+                "hotel_spa = ? , " +
+                "hotel_roomservice = ?  " +
+                "WHERE hotel_id = ?";
+
 
         try {
-            PreparedStatement ps = this.con.prepareStatement(sql);
-            ps.setString(1, hotel.getName());
-            ps.setString(2, hotel.getAddress());
-            ps.setString(3, hotel.getMail());
-            ps.setString(4, hotel.getPhoneno());
-            ps.setInt(5, hotel.getStar());
-            ps.setInt(6, hotel.getPensiontype().getId());
-            ps.setInt(7, hotel.getRoomtype().getId());
-            ps.setString(8, hotel.getFeatures());
-            ps.setInt(9, hotel.getId());
-            return ps.executeUpdate() != -1;
 
+            PreparedStatement pr = this.conn.prepareStatement(query);
+            pr.setString(1, hotel.getName());
+            pr.setString(2, hotel.getAddress());
+            pr.setString(3, hotel.getMail());
+            pr.setString(4, hotel.getPhone());
+            pr.setString(5, hotel.getStar());
+            pr.setBoolean(6, hotel.isCarPark());
+            pr.setBoolean(7, hotel.isWifi());
+            pr.setBoolean(8, hotel.isPool());
+            pr.setBoolean(9, hotel.isFitness());
+            pr.setBoolean(10, hotel.isConcierge());
+            pr.setBoolean(11, hotel.isSpa());
+            pr.setBoolean(12, hotel.isRoomService());
 
-        } catch (SQLException exception) {
-            exception.printStackTrace();
-            return false;
-        }
-
-
-    }
-
-    public boolean delete(int id) {
-        String sql = "DELETE FROM public.hotel WHERE hotel_id = ?";
-        try {
-            PreparedStatement pr = this.con.prepareStatement(sql);
-            pr.setInt(1, id);
+            pr.setInt(13, hotel.getId());
             return pr.executeUpdate() != -1;
-
-        } catch (SQLException exception) {
-            exception.printStackTrace();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
         }
         return true;
     }
 
-    public ArrayList<Hotel> getByListPensionId(int pensionId) {
-        return this.selectByQuery("SELECT * FROM public.hotel WHERE hotel_pensiontype_id = " + pensionId);
-
-    }
-
-    public ArrayList<Hotel> selectByQuery(String query) {
-        ArrayList<Hotel> hotelArrayList = new ArrayList<>();
-
+    public boolean delete(int hotel_id) {
+        String query = "DELETE FROM public.hotel WHERE hotel_id = ?";
         try {
-            ResultSet rs = this.con.createStatement().executeQuery(query);
-            while (rs.next()) {
-                hotelArrayList.add(this.match(rs));
-            }
-
+            PreparedStatement pr = this.conn.prepareStatement(query);
+            pr.setInt(1, hotel_id);
+            return pr.executeUpdate() != -1;
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return hotelArrayList;
+        return true;
     }
 
+    public Hotel getById(int id) {
+        Hotel obj = null;
+        String query = "SELECT * FROM public.hotel WHERE hotel_id = ?";
+        try {
+            PreparedStatement pr = this.conn.prepareStatement(query);
+            pr.setInt(1, id);
+            ResultSet rs = pr.executeQuery();
+            if (rs.next()) {
+                obj = this.match(rs);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return obj;
+    }
+    public String getByName(int id) {
+        String hotelName = null;
+        String query = "SELECT hotel_name FROM public.hotel WHERE hotel_id = ?";
+        try {
+            PreparedStatement pr = this.conn.prepareStatement(query);
+            pr.setInt(1, id);
+            ResultSet rs = pr.executeQuery();
+            if (rs.next()) {
+                hotelName = rs.getString("hotel_name");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return hotelName;
+    }
+
+    public int getByHotelId(String hotelName) {
+        int hotelId = 0;
+        String query = "SELECT hotel_id FROM public.hotel WHERE hotel_name = ?";
+        try {
+            PreparedStatement pr = this.conn.prepareStatement(query);
+            pr.setString(1, hotelName);
+            ResultSet rs = pr.executeQuery();
+            if (rs.next()) {
+                hotelId = rs.getInt("hotel_id");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return hotelId;
+    }
+
+    public List<String> getTumOtelIsimleri() {
+        List<String> otelIsimleri = new ArrayList<>();
+        String query = "SELECT hotel_name FROM public.hotel";  // Uyarlanmış sorgu
+
+        try (Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(query)) {
+
+            while (rs.next()) {
+                otelIsimleri.add(rs.getString("hotel_name"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return otelIsimleri;
+    }
 
 
 }

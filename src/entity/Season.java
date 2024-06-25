@@ -1,64 +1,62 @@
 package entity;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public class Season {
 
-    private int id;
-    private String name;
-    private LocalDate startDate;
-    private LocalDate endDate;
-    private double rateMultiplier;
-
-    public Season(int id, String name, LocalDate startDate, LocalDate endDate, double rateMultiplier) {
-        this.id = id;
-        this.name = name;
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.rateMultiplier = rateMultiplier;
-    }
-
+    private int seasonId;
+    private int hotelId;
+    private LocalDate strt_date;
+    private LocalDate fnsh_date;
+    private double season_factor;
     public Season() {
     }
 
-    public int getId() {
-        return id;
+    public Season(int seasonId, int hotelId, LocalDate strt_date, LocalDate fnsh_date, double season_factor) {
+        this.seasonId = seasonId;
+        this.hotelId = hotelId;
+        this.strt_date = strt_date;
+        this.fnsh_date = fnsh_date;
+        this.season_factor = season_factor;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public int getSeasonId() {
+        return seasonId;
     }
 
-    public String getName() {
-        return name;
+    public void setSeasonId(int seasonId) {
+        this.seasonId = seasonId;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public int getHotelId() {
+        return hotelId;
     }
 
-    public LocalDate getStartDate() {
-        return startDate;
+    public void setHotelId(int hotelId) {
+        this.hotelId = hotelId;
     }
 
-    public void setStartDate(LocalDate startDate) {
-        this.startDate = startDate;
+    public LocalDate getStrt_date() {
+        return strt_date;
     }
 
-    public LocalDate getEndDate() {
-        return endDate;
+    public void setStrt_date(LocalDate strt_date) {
+        this.strt_date = strt_date;
     }
 
-    public void setEndDate(LocalDate endDate) {
-        this.endDate = endDate;
+    public LocalDate getFnsh_date() {
+        return fnsh_date;
     }
 
-    public double getRateMultiplier() {
-        return rateMultiplier;
+    public void setFnsh_date(LocalDate fnsh_date) {
+        this.fnsh_date = fnsh_date;
     }
 
-    public void setRateMultiplier(double rateMultiplier) {
-        this.rateMultiplier = rateMultiplier;
+    public double getSeason_factor() {
+        return season_factor;
+    }
+
+    public void setSeason_factor(double season_factor) {
+        this.season_factor = season_factor;
     }
 }

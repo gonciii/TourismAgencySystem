@@ -3,113 +3,113 @@ package entity;
 import java.time.LocalDate;
 
 public class Reservation {
+    private int reservation_id;
+    private int room_id;
+    private LocalDate checkinDate;
+    private LocalDate checkoutDate;
+    private double total_price;
+    private int guestCount;
+    private String guestName;
+    private String guestId;
+    private String guestMail;
+    private String guestPhone;
 
-    private int id;
-    private String customer_name;
-    private Hotel hotel;
-    private LocalDate strt_date;
-    private LocalDate fnsh_date;
-    private int adult_number;
-    private int child_number;
-    private int total_price;
+    public Reservation(int reservation_id) {
+    }public Reservation() {
+    }
 
-    public Reservation(int id, String customer_name, Hotel hotel, LocalDate strt_date, LocalDate fnsh_date, int adult_number, int child_number, int total_price) {
-        this.id = id;
-        this.customer_name = customer_name;
-        this.hotel = hotel;
-        this.strt_date = strt_date;
-        this.fnsh_date = fnsh_date;
-        this.adult_number = adult_number;
-        this.child_number = child_number;
+    public Reservation(int reservation_id, int room_id, LocalDate checkinDate, LocalDate checkoutDate, double total_price, int guestCount, String guestName, String guestId, String guestMail, String guestPhone) {
+        this.reservation_id = reservation_id;
+        this.room_id = room_id;
+        this.checkinDate = checkinDate;
+        this.checkoutDate = checkoutDate;
         this.total_price = total_price;
-    }
-    public Reservation(String customer_name, Hotel hotel, LocalDate strt_date, LocalDate fnsh_date, int adult_number, int child_number, int total_price) {
-        this.customer_name = customer_name;
-        this.hotel = hotel;
-        this.strt_date = strt_date;
-        this.fnsh_date = fnsh_date;
-        this.adult_number = adult_number;
-        this.child_number = child_number;
-        this.total_price = total_price;
+        this.guestCount = guestCount;
+        this.guestName = guestName;
+        this.guestId = guestId;
+        this.guestMail = guestMail;
+        this.guestPhone = guestPhone;
     }
 
-    public Reservation() {
 
+
+    public int getReservation_id() {
+        return reservation_id;
     }
 
-    public Reservation(String customerName, Hotel selectedOtel, LocalDate strtDate, LocalDate fnshDate, String adultNumber, String childNumber) {
-        this.customer_name = customer_name;
-        this.hotel = hotel;
-        this.strt_date = strt_date;
-        this.fnsh_date = fnsh_date;
-        this.adult_number = adult_number;
-        this.child_number = child_number;
+    public void setReservation_id(int reservation_id) {
+        this.reservation_id = reservation_id;
     }
 
-    public int getId() {
-        return id;
+    public int getRoom_id() {
+        return room_id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setRoom_id(int room_id) {
+        this.room_id = room_id;
     }
 
-    public String getCustomer_name() {
-        return customer_name;
+    public LocalDate getCheckinDate() {
+        return checkinDate;
     }
 
-    public void setCustomer_name(String customer_name) {
-        this.customer_name = customer_name;
+    public void setCheckinDate(LocalDate checkinDate) {
+        this.checkinDate = checkinDate;
     }
 
-    public Hotel getOtel() {
-        return hotel;
+    public LocalDate getCheckoutDate() {
+        return checkoutDate;
     }
 
-    public void setOtel(Hotel otel) {
-        this.hotel= otel;
+    public void setCheckoutDate(LocalDate checkoutDate) {
+        this.checkoutDate = checkoutDate;
     }
 
-    public LocalDate getStrt_date() {
-        return strt_date;
-    }
-
-    public void setStrt_date(LocalDate strt_date) {
-        this.strt_date = strt_date;
-    }
-
-    public LocalDate getFnsh_date() {
-        return fnsh_date;
-    }
-
-    public void setFnsh_date(LocalDate fnsh_date) {
-        this.fnsh_date = fnsh_date;
-    }
-
-    public int getAdult_number() {
-        return adult_number;
-    }
-
-    public void setAdult_number(int adult_number) {
-        this.adult_number = adult_number;
-    }
-
-    public int getChild_number() {
-        return child_number;
-    }
-
-    public void setChild_number(int child_number) {
-        this.child_number = child_number;
-    }
-
-    public int getTotal_price() {
+    public double getTotal_price() {
         return total_price;
     }
 
-    public void setTotal_price(int total_price) {
-        total_price = total_price + (hotel.getRoomtype().getPrice() * adult_number) + ((hotel.getRoomtype().getPrice() * child_number)/2);
+    public void setTotal_price(double total_price) {
         this.total_price = total_price;
     }
 
+    public int getGuestCount() {
+        return guestCount;
+    }
 
+    public void setGuestCount(int guestCount) {
+        this.guestCount = guestCount;
+    }
+
+    public String getGuestName() {
+        return guestName;
+    }
+
+    public void setGuestName(String guestName) {
+        this.guestName = guestName;
+    }
+
+    public String getGuestId() {
+        return guestId;
+    }
+
+    public void setGuestId(String guestId) {
+        this.guestId = guestId;
+    }
+
+    public String getGuestMail() {
+        return guestMail;
+    }
+
+    public void setGuestMail(String guestMail) {
+        this.guestMail = guestMail;
+    }
+
+    public String getGuestPhone() {
+        return guestPhone;
+    }
+
+    public void setGuestPhone(String guestPhone) {
+        this.guestPhone = guestPhone;
+    }
 }

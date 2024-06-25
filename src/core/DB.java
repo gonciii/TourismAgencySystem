@@ -4,47 +4,35 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class DB {
-    private static DB instance = null;       // singleton tasarım deseni
+public class Db {
+
+    // Değerlendirme 6
+    private static Db instance = null;  // Singleton pattern
     private Connection connection = null;
-    private final String DB_URL = "jdbc:postgresql://localhost:5432/tourismAgency";
+    private final String DB_URL = "jdbc:postgresql://localhost:5432/tourismAgencySystem";
     private final String DB_USERNAME = "postgres";
-    private final String DB_PASSWORD = "gonca1";
+    private final String DB_PASS = "gonca1";
 
-    private DB() {
+    private Db() {
         try {
-            this.connection = DriverManager.getConnection(
-                    DB_URL,
-                    DB_USERNAME,
-                    DB_PASSWORD
-            );
-
-        }catch (SQLException e) {
-            System.out.println(e.getMessage());
-
+            this.connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASS);
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());;
         }
     }
-
-
-    // create new Instance !
-    public static Connection getInstance() {
-        try{
-            if (instance == null || instance.getConnection().isClosed()) {
-                instance = new DB();   // yeni bir db
-            }
-
-
-        }catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return instance.getConnection();
-    }
-
 
     public Connection getConnection() {
         return connection;
     }
 
-
-
+    public static Connection getInstance(){
+        try {
+            if (instance == null || instance.getConnection().isClosed()) {
+                instance = new Db();
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return instance.getConnection();
+    }
 }

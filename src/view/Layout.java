@@ -4,15 +4,18 @@ import core.Helper;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
 public class Layout extends JFrame {
+    public void guiInitiliaze(int width, int height) {
 
-    public void guiInitilaze(int width,int height,String title) {
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        this.setTitle("Tourism Agency System"+ title);
-        this.setSize(width,height);
-        this.setLocation(Helper.getLocationPoint("x",this.getSize()),Helper.getLocationPoint("y",this.getSize()));
+        this.setTitle("Hotel Management System");
+        this.setSize(width, height);
+
+        this.setLocation(Helper.getLocationPoint("x", this.getSize()), Helper.getLocationPoint("y", this.getSize()));
         this.setVisible(true);
     }
 
@@ -20,25 +23,36 @@ public class Layout extends JFrame {
         model.setColumnIdentifiers(columns);
         table.setModel(model);
         table.getTableHeader().setReorderingAllowed(false);
-        table.getColumnModel().getColumn(0).setMaxWidth(70);
+        table.getColumnModel().getColumn(0).setMaxWidth(75);
         table.setEnabled(false);
 
+        DefaultTableModel clearModel = (DefaultTableModel) table.getModel();
+        clearModel.setRowCount(0);
 
-        DefaultTableModel Dmodel = (DefaultTableModel) table.getModel();
-        Dmodel.setRowCount(0);
-
-        if(rows == null) {
+        if (rows != null) {
+            for (Object[] row : rows) {
+                model.addRow(row);
+            }
+        } else {
             rows = new ArrayList<>();
         }
+    }
 
-        for (Object[] row : rows) {
-            model.addRow(row);
-        }
+    public int getTableSelectedRow (JTable table,int index) {
+        return Integer.parseInt(table.getValueAt(table.getSelectedRow(), index).toString());
 
     }
 
-    public int getTableSelectedRow(JTable table,int index) {
-        return Integer.parseInt(table.getValueAt(table.getSelectedRow(),index).toString());
-    }
+    public void tableSelectedRow(JTable jtable) {
+        jtable.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                int selectedRow = jtable.rowAtPoint(e.getPoint());
+                jtable.setRowSelectionInterval(selectedRow, selectedRow);
+            }
+        });
 
+
+
+    }
 }

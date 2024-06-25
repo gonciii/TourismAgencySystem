@@ -1,125 +1,105 @@
 package view;
 
-import business.FeatureManager;
 import business.HotelManager;
-import business.PensionManager;
-import business.RoomManager;
-import core.ComboItem;
 import core.Helper;
-import dao.FeatureDao;
-import dao.PensionDao;
 import entity.Hotel;
-import entity.Pension;
-import entity.Room;
 
 import javax.swing.*;
+import java.awt.Color;
 
-public class HotelView extends  Layout{
-
-    private JPanel container;
-    private JLabel lbl_hotel;
-    private JLabel lbl_hotel_name;
-    private JTextField fld_hotel_name;
-    private JTextField fld_hotel_address;
-    private JLabel lbl_hotel_address;
-    private JTextField fld_hotel_mail;
-    private JLabel lbl_hotel_mail;
-    private JTextField fld_hotel_phoneno;
-    private JTextField fld_hotel_star;
-    private JLabel lbl_hotel_phoneno;
-    private JLabel lbl_hotel_star;
-    private JLabel lbl_hotel_pensiontype;
-    private JComboBox cmb_hotel_pensiontype;
-    private JComboBox cmb_hotel_room;
-    private JTextField fld_hotel_features;
-    private JButton btn_hotel_save;
-    private JLabel lbl_hotel_room;
-    private JLabel lbl_hotel_features;
-    private JList list_features;
+public class HotelView extends Layout {
+    private JPanel contanier;
+    private JLabel lbl_save;
+    private JPanel pnl_info;
+    private JPanel pnl_info2;
+    private JRadioButton btn_carpark;
+    private JRadioButton btn_wifi;
+    private JRadioButton btn_pool;
+    private JRadioButton btn_fitness;
+    private JRadioButton btn_concierge;
+    private JRadioButton btn_spa;
+    private JRadioButton btn_roomsrvc;
+    private JButton btn_save;
+    private JTextField fld_hotelname;
+    private JTextField fld_hotelmail;
+    private JTextField fld_hoteltel;
+    private JTextField fld_hoteladres;
+    private JComboBox cmb_hotel_star;
+    private JLabel lbl_hotelname;
+    private JLabel lbl_hotelmail;
+    private JLabel lbl_hoteltel;
+    private JLabel lbl_hoteladres;
+    private JLabel lbl_star;
 
     private Hotel hotel;
     private HotelManager hotelManager;
-    private PensionManager pensionManager;
-    private FeatureManager featureManager;
-    private RoomManager roomManager;
-    private PensionDao pensionDao;
-    private FeatureDao featureDao;
+
 
 
     public HotelView(Hotel hotel) {
-        this.hotelManager = new HotelManager();
-        this.pensionManager = new PensionManager();
-        this.featureManager = new FeatureManager();
-        this.roomManager = new RoomManager();
-        this.add(container);
         this.hotel = hotel;
-        this.guiInitilaze(600,600,"Hotel Panel");
+        this.hotelManager = new HotelManager();
+        this.add(contanier);
+        this.guiInitiliaze(500,500);
 
 
-        if(hotel != null) {
-            this.fld_hotel_name.setText(hotel.getName());
-            this.fld_hotel_address.setText(hotel.getAddress());
-            this.fld_hotel_mail.setText(hotel.getMail());
-            this.fld_hotel_phoneno.setText(hotel.getPhoneno());
-            this.fld_hotel_star.setText(String.valueOf(hotel.getStar()));
-            this.cmb_hotel_pensiontype.addItem(new ComboItem(hotel.getPensiontype().getId(),hotel.getPensiontype().getName()));
-            this.cmb_hotel_room.addItem(new ComboItem(hotel.getRoomtype().getId(),hotel.getRoomtype().getName(),hotel.getRoomtype().getPrice()));
-            this.fld_hotel_features.setText(String.valueOf(hotel.getFeatures()));
+        if (this.hotel.getId() != 0){
+
+            this.fld_hotelname.setText(this.hotel.getName());
+            this.fld_hoteladres.setText(this.hotel.getAddress());
+            this.fld_hotelmail.setText(this.hotel.getMail());
+            this.fld_hoteltel.setText(this.hotel.getPhone());
+            this.cmb_hotel_star.setSelectedItem(this.hotel.getStar());
+            this.btn_carpark.setSelected(this.hotel.isCarPark());
+            this.btn_concierge.setSelected(this.hotel.isConcierge());
+            this.btn_spa.setSelected(this.hotel.isSpa());
+            this.btn_wifi.setSelected(this.hotel.isWifi());
+            this.btn_fitness.setSelected(this.hotel.isFitness());
+            this.btn_pool.setSelected(this.hotel.isPool());
+            this.btn_roomsrvc.setSelected(this.hotel.isRoomService());
         }
 
-        for(Pension pension : this.pensionManager.findAll()){
-            this.cmb_hotel_pensiontype.addItem(new ComboItem(pension.getId(),pension.getName()));
-        }
-
-        for(Room room : this.roomManager.findAll()){
-            this.cmb_hotel_room.addItem(new ComboItem(room.getId(),room.getName(),room.getPrice()));
-        }
+        // renk
+        contanier.setBackground(Color.ORANGE);
 
 
-        btn_hotel_save.addActionListener(e -> {
-            if (Helper.isFieldEmpty(this.fld_hotel_name)) {
-                Helper.showMsg("Please fill in the hotel name.");
+        // kaydet butonu
+        this.btn_save.addActionListener(e -> {
+            if (Helper.isFieldListEmpty(new JTextField[]{this.fld_hotelname, this.fld_hoteladres,this.fld_hotelmail,this.fld_hoteltel})) {
+                Helper.showMsg("fill");
             } else {
-                String name = this.fld_hotel_name.getText();
-                String address = this.fld_hotel_address.getText();
-                String mail = this.fld_hotel_mail.getText();
-                String phoneno = this.fld_hotel_phoneno.getText();
-                int star = Integer.parseInt(this.fld_hotel_star.getText());
+                boolean result ;
 
-                ComboItem selectedPensionItem = (ComboItem) this.cmb_hotel_pensiontype.getSelectedItem();
-                int pensionTypeId = selectedPensionItem.getKey();
-                Pension selectedPension = this.pensionManager.findById(pensionTypeId);
+                this.hotel.setName(fld_hotelname.getText());
+                this.hotel.setAddress(fld_hoteladres.getText());
+                this.hotel.setPhone(fld_hoteltel.getText());
+                this.hotel.setMail(fld_hotelmail.getText());
+                this.hotel.setStar((String) cmb_hotel_star.getSelectedItem());
+                this.hotel.setCarPark(btn_carpark.isSelected());
+                this.hotel.setConcierge(btn_concierge.isSelected());
+                this.hotel.setSpa(btn_spa.isSelected());
+                this.hotel.setWifi(btn_wifi.isSelected());
+                this.hotel.setFitness(btn_fitness.isSelected());
+                this.hotel.setPool(btn_pool.isSelected());
+                this.hotel.setRoomService(btn_roomsrvc.isSelected());
 
-                // Seçilen özelliklerle bir Otel nesnesi oluşturalım
 
-                ComboItem selectedRoomItem = (ComboItem) this.cmb_hotel_room.getSelectedItem();
-                int roomId = selectedRoomItem.getKey();
-                Room selectedRoom = this.roomManager.findById(roomId);
-                String features = this.fld_hotel_features.getText();
 
-                Hotel newHotel = new Hotel(name, address, mail, phoneno, star, selectedPension, selectedRoom,features);
-                boolean result;
 
-                if (this.hotel == null) {
-                    // yeni hotel nesnesini kaydet
-                    result = this.hotelManager.save(newHotel);
+                if (this.hotel.getId() != 0) {
+                    result = this.hotelManager.update(this.hotel);
+
                 } else {
-                    // hotel nesnesini güncelle
-                    newHotel.setId(this.hotel.getId()); // Güncelleme için mevcut Otel'in ID'sini ayarla
-                    result = this.hotelManager.update(newHotel);
+                    result = this.hotelManager.save(this.hotel);
                 }
 
                 if (result) {
-                    Helper.showMsg("Hotel saved successfully.");
-                    dispose(); // close window
+                    Helper.showMsg("done");
+                    this.dispose();
                 } else {
-                    Helper.showMsg("Error occurred while saving hotel.");
+                    Helper.showMsg("error");
                 }
-
             }
-        });
+        }); // Değerlendirme 10
     }
-
-
-
 }

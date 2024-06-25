@@ -1,41 +1,48 @@
 package entity;
-
-import java.util.FormattableFlags;
-
 public class Pension {
 
-    private int id;
-    private String name;
-
-
-    // constr.
-    public Pension(int id, String name) {
-        this.id = id;
-        this.name = name;
-    }
-    public Pension(String name) {
-        this.name = name;
-    }
+        private int pensionId;
+        private int hotelId;
+        private String pensionType;
+        private double pension_factor;
 
     public Pension() {
     }
-
-
-    // getter and setter method
-    public int getId() {
-        return id;
+    public Pension(int pensionId, int hotelId, String pensionType,double pension_factor) {
+        this.pensionId = pensionId;
+        this.hotelId = hotelId;
+        this.pensionType = pensionType;
+        this.pension_factor = pension_factor;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public int getPensionId() {
+        return pensionId;
     }
 
-    public String getName() {
-        return name;
+    public void setPensionId(int pensionId) {
+        this.pensionId = pensionId;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public int getHotelId() {
+        return hotelId;
     }
 
+    public void setHotelId(int hotelId) {
+        this.hotelId = hotelId;
+    }
+
+    public String getPensionType() {
+        return pensionType;
+    }
+
+    public void setPensionType(String pensionType) {
+        this.pensionType = pensionType;
+    }
+    public double getPensionFactor() {
+        return pension_factor;
+    }
+    public void setPensionFactor(double pension_factor) {
+        this.pension_factor = pension_factor;
+    }
 }
+

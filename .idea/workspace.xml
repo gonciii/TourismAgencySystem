@@ -5,7 +5,129 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25226218-f764-4cdf-a61e-dff23d684640" name="Changes" comment="turizm">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/business/FeatureManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/business/HotelManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/business/HotelManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/business/PensionManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/business/PensionManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/business/ReservationManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/business/ReservationManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/business/RoomManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/business/RoomManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/business/SeasonManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/business/SeasonManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/business/UserManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/business/UserManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/core/ComboItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/core/ComboItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/core/DB.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/core/DB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/core/Helper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/core/Helper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/core/ListItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/dao/FeatureDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/dao/HotelDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/dao/HotelDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/dao/PensionDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/dao/PensionDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/dao/ReservationDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/dao/ReservationDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/dao/RoomDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/dao/RoomDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/dao/SeasonDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/dao/SeasonDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/dao/UserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/entity/Feature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/entity/Hotel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/entity/Hotel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/entity/Pension.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/entity/Pension.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/entity/Reservation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/entity/Reservation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/entity/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/entity/Room.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/entity/Season.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/entity/Season.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/AdminView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/AdminView$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/AdminView$10.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/AdminView$11.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/AdminView$12.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/AdminView$13.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/AdminView$14.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/AdminView$15.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/AdminView$16.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/AdminView$17.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/AdminView$18.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/AdminView$19.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/AdminView$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/AdminView$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/AdminView$20.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/AdminView$21.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/AdminView$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/AdminView$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/AdminView$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/AdminView$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/AdminView$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/AdminView$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/AdminView$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/AdminView$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/AdminView$9.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/AdminView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/AdminView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/EmployeeView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/EmployeeView$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/EmployeeView$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/EmployeeView$10.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/EmployeeView$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/EmployeeView$11.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/EmployeeView$12.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/EmployeeView$12.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/EmployeeView$13.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/EmployeeView$13.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/EmployeeView$14.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/EmployeeView$14.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/EmployeeView$15.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/EmployeeView$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/EmployeeView$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/EmployeeView$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/EmployeeView$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/EmployeeView$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/EmployeeView$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/EmployeeView$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/EmployeeView$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/EmployeeView$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/EmployeeView$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/EmployeeView$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/EmployeeView$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/EmployeeView$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/EmployeeView$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/EmployeeView$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/EmployeeView$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/EmployeeView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/EmployeeView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/FeatureView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/HotelView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/HotelView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/Layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/Layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/LoginView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/LoginView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/PensionView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/PensionView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/ReservationView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/ReservationView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/RoomView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/RoomView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/SeasonView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/SeasonView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/UserView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/view/UserView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/business/FeatureManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/business/HotelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/HotelManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/business/PensionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/PensionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/business/ReservationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/ReservationManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/business/RoomManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/RoomManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/business/SeasonManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/SeasonManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/business/UserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/UserManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/ComboItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/ComboItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/DB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/DB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Helper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/ListItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/FeatureDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/HotelDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/HotelDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/PensionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/PensionDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/ReservationDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ReservationDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/RoomDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/RoomDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/SeasonDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/SeasonDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/Feature.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/Hotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Hotel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/Pension.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Pension.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Reservation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/Season.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Season.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/AdminView.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/AdminView.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/AdminView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/AdminView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/EmployeeView.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/EmployeeView.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/EmployeeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/EmployeeView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/FeatureView.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/FeatureView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/HotelView.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/HotelView.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/HotelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/HotelView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/Layout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Layout.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/LoginView.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/LoginView.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/LoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/LoginView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/PensionView.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PensionView.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/PensionView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PensionView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/ReservationView.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ReservationView.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/ReservationView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ReservationView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/RoomView.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/RoomView.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/RoomView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/RoomView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/SeasonView.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/SeasonView.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/SeasonView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/SeasonView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/UserView.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/UserView.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/UserView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/UserView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/turizm.sql" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,14 +151,39 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.App.executor": "Run",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "326",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/MONSTER/IdeaProjects/TourismAgencySystemGitHub/postgresql-42.7.3.jar",
-    "project.structure.last.edited": "Libraries",
+    "last_opened_file_path": "C:/Users/MONSTER/IdeaProjects/TourismAgencySystemGitHub",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\MONSTER\IdeaProjects\TourismAgencySystemGitHub" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\MONSTER\IdeaProjects\TourismAgencySystem\pictures" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="App" />
+      <module name="TourismAgencySystemGitHub" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.App" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -54,7 +201,23 @@
       <option name="project" value="LOCAL" />
       <updated>1719322504884</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="turizm">
+      <option name="closed" value="true" />
+      <created>1719322815087</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1719322815087</updated>
+    </task>
+    <task id="LOCAL-00003" summary="turizm">
+      <option name="closed" value="true" />
+      <created>1719322858014</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1719322858014</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

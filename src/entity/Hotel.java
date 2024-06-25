@@ -1,50 +1,44 @@
 package entity;
 
-import core.ComboItem;
-
 public class Hotel {
-
     // variables
-    private int id;
-    private String name;
-    private String address;
-    private String mail;
-    private String phoneno;
-    private int star;
-    private Pension pensiontype;
-    private Room roomtype;
-    private String features;
+        private int id;
+        private String name;
+        private String address;
+        private String mail;
+        private String phone;
+        private String star;
+        private boolean carPark;
+        private boolean wifi;
+        private boolean pool;
+        private boolean fitness;
+        private boolean concierge;
+        private boolean spa;
+        private boolean roomService;
 
 
-    // empty constr.
-    public Hotel() {
+        // empty constr.
+        public Hotel() {
+        }
 
-    }
-
-    public Hotel(int id, String name, String address, String mail, String phoneno, int star, Pension pensiontype, Room roomtype, String features) {
+        // full const.
+    public Hotel(int id, String name, String address, String mail, String phone, String star, boolean carPark, boolean wifi, boolean pool, boolean fitness, boolean concierge, boolean spa, boolean roomService) {
         this.id = id;
         this.name = name;
         this.address = address;
         this.mail = mail;
-        this.phoneno = phoneno;
+        this.phone = phone;
         this.star = star;
-        this.pensiontype = pensiontype;
-        this.roomtype=roomtype;
-        this.features = features;
+        this.carPark = carPark;
+        this.wifi = wifi;
+        this.pool = pool;
+        this.fitness = fitness;
+        this.concierge = concierge;
+        this.spa = spa;
+        this.roomService = roomService;
     }
 
-    public Hotel(String name, String address, String mail, String phoneno, int star, Pension pensiontype, Room roomtype, String features) {
-
-        this.name = name;
-        this.address = address;
-        this.mail = mail;
-        this.phoneno = phoneno;
-        this.star = star;
-        this.pensiontype = pensiontype;
-        this.roomtype=roomtype;
-        this.features = features;
-    }
-
+    // getter and setter
     public int getId() {
         return id;
     }
@@ -77,62 +71,75 @@ public class Hotel {
         this.mail = mail;
     }
 
-    public String getPhoneno() {
-        return phoneno;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setPhoneno(String phoneno) {
-        this.phoneno = phoneno;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
-    public int getStar() {
+    public String getStar() {
         return star;
     }
 
-    public void setStar(int star) {
+    public void setStar(String star) {
         this.star = star;
     }
 
-    public Pension getPensiontype() {
-        return pensiontype;
+    public boolean isCarPark() {
+        return carPark;
     }
 
-    public void setPensiontype(Pension pensiontype) {
-        this.pensiontype = pensiontype;
+    public void setCarPark(boolean carPark) {
+        this.carPark = carPark;
     }
 
-    public Room getRoomtype() {
-        return roomtype;
+    public boolean isWifi() {
+        return wifi;
     }
 
-    public void setRoomtype(Room roomtype) {
-        this.roomtype = roomtype;
+    public void setWifi(boolean wifi) {
+        this.wifi = wifi;
     }
 
-    public String getFeatures() {
-        return features;
+    public boolean isPool() {
+        return pool;
     }
 
-    public void setFeatures(String features) {
-        this.features = features;
+    public void setPool(boolean pool) {
+        this.pool = pool;
     }
 
-    public ComboItem getComboItem() {
-        return new ComboItem(this.getId(),this.getName() + " - "+this.getPensiontype().getName());
+    public boolean isFitness() {
+        return fitness;
     }
 
-    @Override
-    public String toString() {
-        return "Hotel{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", address='" + address + '\'' +
-                ", mail='" + mail + '\'' +
-                ", phoneno='" + phoneno + '\'' +
-                ", star=" + star +
-                ", pensiontype=" + pensiontype +
-                ", roomtype=" + roomtype +
-                ", features='" + features + '\'' +
-                '}';
+    public void setFitness(boolean fitness) {
+        this.fitness = fitness;
+    }
+
+    public boolean isConcierge() {
+        return concierge;
+    }
+
+    public void setConcierge(boolean concierge) {
+        this.concierge = concierge;
+    }
+
+    public boolean isSpa() {
+        return spa;
+    }
+
+    public void setSpa(boolean spa) {
+        this.spa = spa;
+    }
+
+    public boolean isRoomService() {
+        return roomService;
+    }
+
+    public void setRoomService(boolean roomService) {
+        this.roomService = roomService;
     }
 }
