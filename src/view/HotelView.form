@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="view.HotelView">
+  <grid id="27dc6" binding="container" layout-manager="GridLayoutManager" row-count="18" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="10" left="10" bottom="10" right="10"/>
+    <constraints>
+      <xy x="20" y="20" width="500" height="601"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <component id="c56ff" class="javax.swing.JLabel" binding="lbl_hotel">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font size="16" style="1"/>
+          <text value="Add / Edit Hotel"/>
+        </properties>
+      </component>
+      <component id="20802" class="javax.swing.JLabel" binding="lbl_hotel_name">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Hotel Name"/>
+        </properties>
+      </component>
+      <component id="1826" class="javax.swing.JTextField" binding="fld_hotel_name">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="995a1" class="javax.swing.JLabel" binding="lbl_hotel_address">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Hotel Address"/>
+        </properties>
+      </component>
+      <component id="8db1d" class="javax.swing.JTextField" binding="fld_hotel_address">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="39"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="a6666" class="javax.swing.JLabel" binding="lbl_hotel_mail">
+        <constraints>
+          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Mail"/>
+        </properties>
+      </component>
+      <component id="6ff54" class="javax.swing.JTextField" binding="fld_hotel_mail">
+        <constraints>
+          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="3d219" class="javax.swing.JLabel" binding="lbl_hotel_phoneno">
+        <constraints>
+          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Phone Number"/>
+        </properties>
+      </component>
+      <component id="ce5fd" class="javax.swing.JTextField" binding="fld_hotel_phoneno">
+        <constraints>
+          <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="9e5e3" class="javax.swing.JLabel" binding="lbl_hotel_star">
+        <constraints>
+          <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Number Of Stars"/>
+        </properties>
+      </component>
+      <component id="3de2d" class="javax.swing.JTextField" binding="fld_hotel_star">
+        <constraints>
+          <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="3b0a" class="javax.swing.JLabel" binding="lbl_hotel_pensiontype">
+        <constraints>
+          <grid row="11" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Pension Type"/>
+        </properties>
+      </component>
+      <component id="abd23" class="javax.swing.JComboBox" binding="cmb_hotel_pensiontype">
+        <constraints>
+          <grid row="12" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="bdf75" class="javax.swing.JLabel" binding="lbl_hotel_room">
+        <constraints>
+          <grid row="13" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Room Type"/>
+        </properties>
+      </component>
+      <component id="4bd0e" class="javax.swing.JComboBox" binding="cmb_hotel_room">
+        <constraints>
+          <grid row="14" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="ea944" class="javax.swing.JLabel" binding="lbl_hotel_features">
+        <constraints>
+          <grid row="15" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Facility Features"/>
+        </properties>
+      </component>
+      <component id="e24e1" class="javax.swing.JTextField" binding="fld_hotel_features">
+        <constraints>
+          <grid row="16" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="49856" class="javax.swing.JButton" binding="btn_hotel_save">
+        <constraints>
+          <grid row="17" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Save"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
