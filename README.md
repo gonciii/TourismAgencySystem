@@ -3,11 +3,11 @@ Turizm Acente Sistemi
 
 Bu proje, Patika Turizm Acentesi için geliştirilen otel yönetim ve rezervasyon sistemi Java dilinde ve katmanlı mimari kullanılarak oluşturulmuştur.
 
-Proje Açıklaması
+------Proje Açıklaması--------
 
 Patika Turizm Acentesi'nin otel rezervasyon işlemlerini dijital ortamda yönetmesini sağlayan bir yazılımdır. Proje, aşağıdaki katmanlar üzerinde organize edilmiştir: business, dao, entity, core ve view.
 
-Kullanılan Teknolojiler ve Araçlar
+----Kullanılan Teknolojiler ve Araçlar-----
 
 -Java SE 8: Ana programlama dili.
 
@@ -15,10 +15,10 @@ Kullanılan Teknolojiler ve Araçlar
 
 -Java Swing: Kullanıcı arayüzü geliştirmek için tercih edilmiştir.
 
-Proje Katmanları
+----Proje Katmanları------
 
 Proje, aşağıdaki katmanlar üzerinde organize edilmiştir:
-1. View Katmanı
+1.View Katmanı
 Kullanıcı arayüzü bileşenlerini içerir. Java Swing ile geliştirilmiştir.
 
 2.Business Katmanı
@@ -56,13 +56,13 @@ Acente Çalışanı
    Rezervasyon listeleme, ekleme, silme, güncelleme
 
    
- Kurulum
+------- Kurulum ------
  
    PostgreSQL Kurulumu: İlk olarak PostgreSQL veritabanınızı kurun ve bir veritabanı oluşturun.
    Veritabanı Yapısının Kurulumu: Proje içinde bulunan database.sql dosyasını kullanarak tabloları ve ilişkileri oluşturun.
    Uygulamanın Başlatılması: Proje içinde bulunan ana sınıfı çalıştırarak uygulamayı başlatın.
 
- Kullanım
+ -------Kullanım---------
  
 Admin Girişi:
 Admin olarak giriş yaparak kullanıcı yönetimi sekmesinden acente çalışanları ekleyebilir veya yönetebilirsiniz.
