@@ -9,7 +9,9 @@ import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
 
+
 public class Helper {
+    // tema !
     public static void setTheme() {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -18,6 +20,8 @@ public class Helper {
         }
     }
 
+
+    // mesaj opsiyonları !
     public static void showMsg(String str) {
 
         optionPaneTR();
@@ -49,6 +53,8 @@ public class Helper {
         JOptionPane.showMessageDialog(null, msg, title, JOptionPane.INFORMATION_MESSAGE);
     }
 
+
+    // emin misin sorusu için method !
     public static boolean confirm(String str) {
         String msg;
 
@@ -74,6 +80,7 @@ public class Helper {
         return false;
     }
 
+    // ekran ortalama
     public static int getLocationPoint(String type, Dimension size) {
         return switch (type) {
             case "x" -> (Toolkit.getDefaultToolkit().getScreenSize().width - size.width) / 2;
@@ -82,6 +89,7 @@ public class Helper {
         };
     }
 
+    // dil dönüşümü
     public static void optionPaneTR() {
         UIManager.put("OptionPane.okButtonText", "Tamam");
         UIManager.put("OptionPane.yesButtonText", "Evet");
@@ -89,10 +97,12 @@ public class Helper {
         UIManager.put("OptionPane.cancelButtonText", "İptal");
     }
 
+    // fiyat hesaplama
     public static double CalculatePrice(double seasonFactor, double pensionFactor, int days, int adultcount, int childcount, double adultPrice, double childPrice) {
         return (((adultcount * adultPrice) + (childcount * childPrice)) * seasonFactor * pensionFactor * days);
     }
 
+    // gün hesaplama
     public static int calculateDays(String checkin, String checkout) {
         SimpleDateFormat myFormat = new SimpleDateFormat("yyyy-MM-dd");
         int days = 0;
