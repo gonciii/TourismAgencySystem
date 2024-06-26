@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="25226218-f764-4cdf-a61e-dff23d684640" name="Changes" comment="Tourism Agency System Update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Helper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/core/Helper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TourismAgencySystemGitHub/core/Helper.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +47,7 @@
       <recent name="C:\Users\MONSTER\IdeaProjects\TourismAgencySystemGitHub" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\MONSTER\IdeaProjects\TourismAgencySystem" />
       <recent name="C:\Users\MONSTER\IdeaProjects\TourismAgencySystem\pictures" />
     </key>
   </component>
@@ -115,7 +114,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719345241578</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Tourism Agency System Update">
+      <option name="closed" value="true" />
+      <created>1719405121947</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1719405121947</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
