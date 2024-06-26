@@ -1,6 +1,6 @@
-         Turizm Acente Sistemi
 
 Turizm Acente Sistemi
+
 Bu proje, Patika Turizm Acentesi için geliştirilen otel yönetim ve rezervasyon sistemi Java dilinde ve katmanlı mimari kullanılarak oluşturulmuştur.
 
 Proje Açıklaması
