@@ -59,7 +59,9 @@ Acente Çalışanı
  Kullanım
 Admin Girişi:
 Admin olarak giriş yaparak kullanıcı yönetimi sekmesinden acente çalışanları ekleyebilir veya yönetebilirsiniz.
+
 ![Ekran Görüntüsü (45)](https://github.com/gonciii/TourismAgencySystem/assets/114026990/027c718a-f50f-45a3-b425-11f08f4fd469)
+
 ![Ekran Görüntüsü (46)](https://github.com/gonciii/TourismAgencySystem/assets/114026990/ae44fcc1-8882-456f-838e-878173b7a9a7)
 
 
