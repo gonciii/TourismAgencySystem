@@ -16,8 +16,8 @@ Patika Turizm Acentesi'nin otel rezervasyon işlemlerini dijital ortamda yönetm
 -Java Swing: Kullanıcı arayüzü geliştirmek için tercih edilmiştir.
 
 ----Proje Katmanları------
-
 Proje, aşağıdaki katmanlar üzerinde organize edilmiştir:
+
 1.View Katmanı
 Kullanıcı arayüzü bileşenlerini içerir. Java Swing ile geliştirilmiştir.
 
