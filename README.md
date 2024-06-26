@@ -1,77 +1,77 @@
          Turizm Acente Sistemi
 
-Patika Turizm Acentesi işlerini dijital ortamdan yürütebileceği bir yapıya ihtiyaç duymaktadır. Patika ile bu dijital altyapı için anlaştığınızı varsayın.
+Turizm Acente Sistemi
+Bu proje, Patika Turizm Acentesi için geliştirilen otel yönetim ve rezervasyon sistemi Java dilinde ve katmanlı mimari kullanılarak oluşturulmuştur.
 
-Bu projenin temel amacı, otel sektöründe faaliyet gösteren işletmenin günlük operasyonlarını daha etkili bir şekilde yönetmesini sağlamak ve müşteri rezervasyon süreçlerini optimize etmektir. 
+Proje Açıklaması
+Patika Turizm Acentesi'nin otel rezervasyon işlemlerini dijital ortamda yönetmesini sağlayan bir yazılımdır. Proje, aşağıdaki katmanlar üzerinde organize edilmiştir: business, dao, entity, core ve view.
 
-Patika Turizm Acentesi pek çok otel ile anlaşma yaparak otellerin odalarını müşterilere rezerve etmektedir. Acente tarafından admin yetkisine sahip ilk kişi yazılımcı tarafından veri tabanına kaydedilecektir. Admin yetkisine sahip kişi de sisteme login olup hem admin hem acente çalışanı ekleyebilecektir. Acente çalışanları sisteme otel, oda kaydedecek ve müşterilerin taleplerine göre oda araması yapıp rezervasyon işlemi yapacaktır. Müşterilerin sisteme erişimi olmadığını, telefon veya yüz yüze destek aldığı bir senaryo düşünün.
+Kullanılan Teknolojiler ve Araçlar
+-Java SE 8: Ana programlama dili.
+-PostgreSQL: Veritabanı yönetimi için kullanılmıştır.
+-Java Swing: Kullanıcı arayüzü geliştirmek için tercih edilmiştir.
 
-Otel Yönetim Sistemi, kullanıcı dostu bir arayüzle acente çalışanlarına esnek fiyatlandırma, detaylı otel ve oda yönetimi, rezervasyon kolaylığı ve otomatik hesaplama gibi özellikler sunarak bu amaçları gerçekleştirmeyi hedeflemektedir.
+Proje Katmanları
+Proje, aşağıdaki katmanlar üzerinde organize edilmiştir:
 
-Acente bu işleri kağıt üzerinde ve manuel olarak yapmanın zaman kaybı olduğunu düşünür, işini kolaylaştıracak bir yazılıma ihtiyaç duymaktadır.
+1. View Katmanı
+Kullanıcı arayüzü bileşenlerini içerir. Java Swing ile geliştirilmiştir.
 
-Acentenin yazılımdan beklentisi:
+2.Business Katmanı
+İş mantığı işlemlerinin yönetildiği katmandır. Servis sınıfları burada bulunur.
 
-Uygulanacak projede iki farklı kullanıcı tanımlanacaktır. Bunlar admin ve acente çalışanıdır. Bu kullanıcıların yetkileri aşağıdaki gibidir:
+3.DAO (Data Access Object) Katmanı
+Veritabanı işlemlerinin gerçekleştirildiği katmandır. 
 
+4.Entity Katmanı
+Veritabanı tablolarını temsil eden entity (varlık) sınıflarını içerir.
 
+5.Core Katmanı
+Temel yardımcı sınıfları, genel hizmetleri ve bağımsız araçları içerir.(DB,Helper,ComboItem..)
+
+---Özellikler----
 
 Admin
+-Kullanıcı Yönetimi:
+  Acente çalışanı listeleme, ekleme, silme, güncelleme
+  Kullanıcı rolüne göre filtreleme (admin, personel)
+  
+Acente Çalışanı
+-Otel Yönetimi :
+   Otel listeleme, ekleme
+   Pansiyon tipleri ve tesis özellikleri tanımlama
+-Oda Yönetimi:
+   Oda listeleme, ekleme
+-Dönem Yönetimi
+   Dönem listeleme, ekleme
+   
+-Fiyat Yönetimi
 
-Kullanıcı Yönetimi: Admin yetkisi ile giriş yapıldığında admin ekranı açılacak. Bu ekrandan,
+-Oda Arama ve Rezervasyon İşlemleri:
+   Rezervasyon listeleme, ekleme, silme, güncelleme
 
-Acente çalışanı listeleme,
-Ekleme, 
-Silme, 
-Güncelleme ve 
-Kullanıcının rolüne (admin, personel) göre filtreleme yapılmalıdır.
+   
+ Kurulum
+   PostgreSQL Kurulumu: İlk olarak PostgreSQL veritabanınızı kurun ve bir veritabanı oluşturun.
+   Veritabanı Yapısının Kurulumu: Proje içinde bulunan database.sql dosyasını kullanarak tabloları ve ilişkileri oluşturun.
+   Uygulamanın Başlatılması: Proje içinde bulunan ana sınıfı çalıştırarak uygulamayı başlatın.
 
-
-Acente Çalışanı (Personel)
-
-Otel Yönetimi: Otel listeleme, ekleme
-Oda Yönetimi: Oda listeleme, ekleme
-Dönem Yönetimi: Dönem listeleme, ekleme
-Fiyat Yönetimi
-Oda Arama
-Rezervasyon işlemleri: Rezervasyon listeleme, ekleme, silme, güncelleme
-
-
-Kullanıcı Yönetimi
-
-Kullanıcı yönetimi, admin tarafından sisteme erişecek kullanıcıları ekleme, çıkarma ve düzenleme işlemlerini gerçekleştirilir. Kullanıcılar username ve password girerek sisteme giriş yapar.
-
-Admin, sisteme yeni bir kullanıcı eklerken kullanıcının rolünü (admin, personel) belirler.
-Admin, mevcut kullanıcıların bilgilerini (ad, soyad, şifre vb.) düzenleyebilir.
-Admin, kullanıcı hesabını silebilir.
-Admin, kullanıcının rolüne (admin, personel) göre filtreleme yapabilir..
-
-
-Otel Yönetimi
-
-Acente anlaşmalı olduğu otelleri, konum bilgileri ve diğer özellikleri ile birlikte sistemden yönetmeli. Otel eklenirken Otel Adı, Adres, E-posta, Telefon, Yıldız, Tesis Özellikleri, Pansiyon tipleri gibi diğer tanımlamalar yapılır.
-
-Otel ekranı, otellerin listelendiği bir ekranı içerir. Bu ekran üzerinden otel ekleme işlemi gerçekleştirilebilir. Aynı zamanda var olan otellere sahip olduğu pansiyon tipi, tesis özelliği ve dönem bilgisi kaydedilmelidir.
+ Kullanım
+Admin Girişi:
+Admin olarak giriş yaparak kullanıcı yönetimi sekmesinden acente çalışanları ekleyebilir veya yönetebilirsiniz.
+![Ekran Görüntüsü (45)](https://github.com/gonciii/TourismAgencySystem/assets/114026990/027c718a-f50f-45a3-b425-11f08f4fd469)
+![Ekran Görüntüsü (46)](https://github.com/gonciii/TourismAgencySystem/assets/114026990/ae44fcc1-8882-456f-838e-878173b7a9a7)
 
 
-
-Sistemde olması beklenen Pansiyon Tipleri:
-
-Ultra Her şey Dahil
-Her şey Dahil
-Oda Kahvaltı
-Tam Pansiyon
-Yarım Pansiyon
-Sadece Yatak
-Alkol Hariç Full credit
+Acente Çalışanı Girişi:
+Acente çalışanı olarak giriş yaparak otel yönetimi, oda yönetimi, rezervasyon işlemleri gibi işlemleri gerçekleştirebilirsiniz.
+   
+![Ekran Görüntüsü (44)](https://github.com/gonciii/TourismAgencySystem/assets/114026990/3bc0ecb9-378d-4f82-a5fb-7af2fc0047b5)
 
 
-Sistemde olması beklenen Tesis Özellikleri:
 
-Ücretsiz Otopark
-Ücretsiz WiFi
-Yüzme Havuzu
-Fitness Center
-Hotel Concierge
-SPA
-7/24 Oda Servisi
+
+
+
+
+   
