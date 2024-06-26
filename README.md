@@ -10,13 +10,14 @@ Patika Turizm Acentesi'nin otel rezervasyon işlemlerini dijital ortamda yönetm
 Kullanılan Teknolojiler ve Araçlar
 
 -Java SE 8: Ana programlama dili.
+
 -PostgreSQL: Veritabanı yönetimi için kullanılmıştır.
+
 -Java Swing: Kullanıcı arayüzü geliştirmek için tercih edilmiştir.
 
 Proje Katmanları
 
 Proje, aşağıdaki katmanlar üzerinde organize edilmiştir:
-
 1. View Katmanı
 Kullanıcı arayüzü bileşenlerini içerir. Java Swing ile geliştirilmiştir.
 
